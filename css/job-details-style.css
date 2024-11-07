@@ -91,7 +91,7 @@
 	height: auto;
 	transform: translate(-50%, -50%);
 	z-index: -1;
-	background-color: #2b2940;
+	background-color: #8f53f0;
 }*/
 .hero-content {
 	position: relative;
@@ -132,14 +132,10 @@ h1 {
     font-size: 4rem;
 }
 .btn-primary {
-	background-color: #2b293f;
+	background-color: #8f53f0;
 	border: 0;
 	border-radius: 50px;
 	padding: 0.6rem 1.5rem;
-}
-.btn-primary:hover {
-	background-color: #1a192a;
-	border-color: #1a192a;
 }
 .nav-link {
 	font-size: 1.1rem;
@@ -299,7 +295,7 @@ h2 {
 	height: auto;
 }
 .quote-section {
-	background-color: #2b293f;
+	background-color: #8f53f0;
 	color: #fff;
 	padding: 60px 20px;
 }
@@ -546,7 +542,7 @@ a:hover {
 	text-decoration: none;
 }
 .talentech-section a {
-	color: #2b293f;
+	color: #8f53f0;
 	text-decoration: none;
 	background-color: transparent;
 	text-decoration: underline;
@@ -580,16 +576,13 @@ a:hover {
 #loadMore {
 	font-weight: 800;
 }
-.bg-dark {
-	background-color: #101018 !important;
-}
 @media (max-width: 991.98px) {
 	.background-image {
 		margin-bottom: 20px;
 	}
 }
 @media (min-width: 992px) {
-	.talentech-section h2,.talentech-section p, .talentech-section .p-rich_text_section, .talentech-section ul, .talentech-section ol, .talentech-section h3, .talentech-section h4, .talentech-section h5, .talentech-section h6 {
+	.talentech-section h2, .talentech-section .p-rich_text_section, .talentech-section p, .talentech-section ul, .talentech-section ol, .talentech-section h3, .talentech-section h4, .talentech-section h5, .talentech-section h6 {
 		padding-left: 210px;
 		padding-right: 260px;
 		line-height: 1.6;
@@ -621,7 +614,7 @@ a:hover {
 	display: block;
 }
 .apply-btn {
-    background-color: #2b293f !important;
+    background-color: #8f53f0 !important;
     color: white !important;
     border: none;
     text-decoration: none !important;
@@ -832,9 +825,6 @@ a.nav-link.new-link {
 }
 
 @media (max-width: 992px) {
-    .navbar {
-        background-color: #101018 !important;
-    }
     .mobile-only {
         display: flex !important;
         justify-content: center;
@@ -850,4 +840,3 @@ a.nav-link.new-link {
         display: none !important;
     }
 }
-
