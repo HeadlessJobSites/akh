@@ -833,11 +833,9 @@ $(document).ready(function () {
         const markers = {};
 
 const map = L.map('mapid', {
-    attributionControl: false,
-    scrollWheelZoom: false,
-    maxBounds: [[-90, -180], [90, 180]],
-    maxBoundsViscosity: 1.0
-}).setView([41.9028, 12.4964], 4); 
+            attributionControl: false,
+            scrollWheelZoom: false
+        }).setView([64.70397159508356, 13.109082259358335], 4);
 	    
 L.tileLayer('https://api.mapbox.com/styles/v1/inequi/cm38t8tkw00yf01qz8aca7nni/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiaW5lcXVpIiwiYSI6ImNsdTQ0c2FybTFiZG4ya3FzZjQxOW91ejUifQ.Z_vyEld041G0LshX2Mdtpw', {
     maxZoom: 8,
@@ -850,8 +848,8 @@ L.tileLayer('https://api.mapbox.com/styles/v1/inequi/cm38t8tkw00yf01qz8aca7nni/t
 
         var customIcon = L.icon({
             iconUrl: './files/Logo_Hæhre_web.png',
-            iconSize: [34, 34],
-            iconAnchor: [30, 30],
+            iconSize: [157, 70],
+            iconAnchor: [70, 30],
             popupAnchor: [1, -15]
         });
 
