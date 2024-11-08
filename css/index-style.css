@@ -72,7 +72,7 @@
     color: #fff;
 }
 .leaflet-popup-content-wrapper, .leaflet-popup-tip {
-    background: #8f53f0 !important;
+    background: transparent !important;
 }
 .leaflet-popup-content {
     margin: 0 !important;
