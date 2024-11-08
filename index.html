@@ -97,7 +97,7 @@ $(document).ready(function() {
         </video>
         <div class="hero-content">
             <h1>Vi bygger <span style="font-weight: 800;">fremtiden</span></h1>
-            <a href="#jobs-anchor" class="btn btn-primary btn-lg"><span class="btn-arrow"><strong>See available positions</strong></span></a>
+            <a href="#jobs-anchor" class="btn btn-primary btn-lg"><span class="btn-arrow"><strong>Se ledige stillinger</strong></span></a>
         </div>
     </div>
 
@@ -109,13 +109,13 @@ document.addEventListener('DOMContentLoaded', function() {
     .then(response => response.json())
     .then(jobs => {
       const positionsCount = jobs.length; // Get the count of jobs from the feed
-      const btnText = positionsCount === 1 ? 'See 1 available positions' : `See ${positionsCount} available positions`; // Update button text based on count
-      document.querySelector('a.btn.btn-primary.btn-lg strong').textContent = positionsCount > 0 ? btnText : 'See available positions';
+      const btnText = positionsCount === 1 ? 'Se 1 ledig stilling' : `Se ${positionsCount} ledige stillinger`; // Update button text based on count
+      document.querySelector('a.btn.btn-primary.btn-lg strong').textContent = positionsCount > 0 ? btnText : 'Se ledige stillinger';
     })
     .catch(error => {
       console.error('Error fetching job details:', error);
       // If there is an error fetching the jobs, show default text
-      document.querySelector('a.btn.btn-primary.btn-lg strong').textContent = 'See available positions';
+      document.querySelector('a.btn.btn-primary.btn-lg strong').textContent = 'Se ledige stillinger';
     });
 });
 </script>
@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 <section class="team-section my-2 py-5 m-my-0" id="meet-the-team" style="background-color: #DCE0E6;">
-        <h2 class="container pt-5 mb-0 pb-0 m-px-4">Meet the <span class="title-alt">team</span></h2>
+        <h2 class="container pt-5 mb-0 pb-0 m-px-4">Møt <span class="title-alt">teamet</span></h2>
     <div class="container mt-0 pt-2">
         <div class="row mt-3 m-mt-2 m-mx-1">
             <!-- team 1 -->
@@ -229,25 +229,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <div class="feature-section" style="">
     <div class="container py-5 m-py-0">
-        <h2 class="pt-5 m-px-2">Our<span class="title-alt"> culture</span></h2>
+        <h2 class="pt-5 m-px-2">Bli kjent<span class="title-alt"> våre ansatte</span></h2>
         <div class="row align-items-center mt-5 mb-5 pb-3 flex-lg-row m-mt-4 m-mb-0"> <!-- Changes for mobile first -->
             <div class="col-lg-7">
-                <div class="background-image rounded-image m-mb-0" style="background-image: url('./files/shutter1.jpg');"></div>
+                <div class="background-image rounded-image m-mb-0" style="background-image: url('./files/Hahre-1.jpg');"></div>
             </div>
             <div class="col-lg-5 text-padding m-p-4"> <!-- text-padding class for more padding -->
-                <h3 style="font-size: 24px;font-weight: 800;">José María Romero</h3>
-				<p><strong>Warehouse Stock Leader at Madrid Airport</strong></p>
-				<p>"I value Avolta as an employer for two significant attitudes: willingness and consistency."</p>
+                <h3 style="font-size: 24px;font-weight: 800;">Lorem ipsum dolor sit amet</h3>
+				<p><strong>Aenean tincidunt sed elit sit</strong></p>
+				<p>"Ut in orci risus. Praesent elementum quam eu nulla rutrum feugiat. Sed ultrices, diam sit amet placerat efficitur, eros orci mattis risus, vitae aliquet magna mauris fermentum augue. Morbi ut ante rutrum, mollis augue at, porta mauris. In hac habitasse platea dictumst. Donec porta molestie eros at laoreet. Quisque dignissim et ex et condimentum. Suspendisse venenatis est ac dui dignissim pharetra. Etiam vitae bibendum lorem."</p>
             </div>
         </div>
 <div class="row align-items-center mt-5 mb-5 pt-5 pb-3 m-my-0 m-pt-0">
     <div class="col-lg-5 text-padding m-p-4 order-2 order-lg-1">
-        <h3 style="font-size: 24px;font-weight: 800;">Natasha Ghafur</h3>
-        <p><strong>Store Manager at Heathrow Airport</strong></p>
-        <p>"At Avolta, everyone can develop and together we can achieve something amazing."</p>
+        <h3 style="font-size: 24px;font-weight: 800;">Lorem ipsum dolor sit amet</h3>
+        <p><strong>Aenean tincidunt sed elit sit</strong></p>
+        <p>"Ut in orci risus. Praesent elementum quam eu nulla rutrum feugiat. Sed ultrices, diam sit amet placerat efficitur, eros orci mattis risus, vitae aliquet magna mauris fermentum augue. Morbi ut ante rutrum, mollis augue at, porta mauris. In hac habitasse platea dictumst. Donec porta molestie eros at laoreet. Quisque dignissim et ex et condimentum. Suspendisse venenatis est ac dui dignissim pharetra. Etiam vitae bibendum lorem."</p>
     </div>
     <div class="col-lg-7 order-1 order-lg-2">
-        <div class="background-image rounded-image m-mb-0" style="background-image: url('./files/shutter2.png');"></div>
+        <div class="background-image rounded-image m-mb-0" style="background-image: url('./files/Hahre-2.png');"></div>
     </div>
 </div>
     </div>
