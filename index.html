@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
     .then(response => response.json())
     .then(jobs => {
       const positionsCount = jobs.length; // Get the count of jobs from the feed
-      const btnText = positionsCount === 1 ? 'Se 1 ledig stilling <i class="arrow pt-1 fa-regular fa-arrow-right-long" aria-hidden="true"></i>' : `Se ${positionsCount} ledige stillinger <i class="arrow pt-1 fa-regular fa-arrow-right-long" aria-hidden="true"></i>`; // Update button text based on count
+      const btnText = positionsCount === 1 ? 'Se 1 ledig stilling <i class="arrow pt-1 fa-regular fa-arrow-right-long" aria-hidden="true"></i>' : "Se ${positionsCount} ledige stillinger <i class='arrow pt-1 fa-regular fa-arrow-right-long' aria-hidden='true'></i>"; // Update button text based on count
       document.querySelector('a.btn.btn-primary.btn-lg strong').textContent = positionsCount > 0 ? btnText : 'Se ledige stillinger <i class="arrow pt-1 fa-regular fa-arrow-right-long" aria-hidden="true"></i>';
     })
     .catch(error => {
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
 -->
 	
 	
-	<div class="talentech-section py-5 mb-5" id="company-section">
+	<div class="talentech-section py-5 mb-3" id="company-section">
     <div class="container pt-4 m-mt-2">
         <h2 class="m-px-2">Velkommen til <span class="title-alt">Hæhre</span></h2>
         <p class="my-4  m-px-2">Hæhre Entreprenør er en av Norges ledende anleggsentreprenører, med over 50 års erfaring i å bygge og forme infrastrukturen i vårt langstrakte land. Siden starten i 1974 har vi vokst til å bli en betydelig aktør, kjent for vår evne til å gjennomføre store og komplekse prosjekter med høy kvalitet og presisjon.</p>
