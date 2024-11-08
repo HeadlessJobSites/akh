@@ -105,7 +105,7 @@ $(document).ready(function() {
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   // Fetch the jobs from the feed
-  fetch('https://api.talentech.io/reachmee/feed/')
+  fetch('https://api.talentech.io/reachmee/feed/akh')
     .then(response => response.json())
     .then(jobs => {
       const positionsCount = jobs.length; // Get the count of jobs from the feed
@@ -230,7 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="feature-section" style="">
     <div class="container py-5 m-py-0">
         <h2 class="pt-5 m-px-2">Bli kjent<span class="title-alt"> våre ansatte</span></h2>
-        <div class="row align-items-center mt-5 mb-5 pb-3 flex-lg-row m-mt-4 m-mb-0"> <!-- Changes for mobile first -->
+        <div class="row align-items-center mt-5 mb-5 pb-5 flex-lg-row m-mt-4 m-mb-0"> <!-- Changes for mobile first -->
             <div class="col-lg-7">
                 <div class="background-image rounded-image m-mb-0" style="background-image: url('./files/Hahre-1.jpg');"></div>
             </div>
@@ -240,7 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				<p>"Ut in orci risus. Praesent elementum quam eu nulla rutrum feugiat. Sed ultrices, diam sit amet placerat efficitur, eros orci mattis risus, vitae aliquet magna mauris fermentum augue. Morbi ut ante rutrum, mollis augue at, porta mauris. In hac habitasse platea dictumst. Donec porta molestie eros at laoreet. Quisque dignissim et ex et condimentum. Suspendisse venenatis est ac dui dignissim pharetra. Etiam vitae bibendum lorem."</p>
             </div>
         </div>
-<div class="row align-items-center mt-5 mb-5 pt-5 pb-3 m-my-0 m-pt-0">
+<div class="row align-items-center mt-5 mb-5 pt-5 pb-5 m-my-0 m-pt-0">
     <div class="col-lg-5 text-padding m-p-4 order-2 order-lg-1">
         <h3 style="font-size: 24px;font-weight: 800;">Lorem ipsum dolor sit amet</h3>
         <p><strong>Aenean tincidunt sed elit sit</strong></p>
@@ -264,8 +264,8 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="quote-section py-5">
     <div class="container py-5 mt-3 m-py-2">
         <blockquote class="blockquote text-center">
-            <p class="mb-4">"I like Avolta because of its global importance and because of the support in my personal and professional development."</p>
-            <footer class="blockquote-footer">Presentación Gallego</footer>
+            <p class="mb-4">"Praesent elementum quam eu nulla rutrum feugiat. Sed ultrices, diam sit amet placerat efficitur."</p>
+            <footer class="blockquote-footer">Lorem ipsum dolor sit amet</footer>
         </blockquote>
     </div>
 </div>
@@ -278,7 +278,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <div class="container pt-5 m-px-4 m-pb-2">
         <h2>Vår <span class="title-alt">rekrutteringsprosess</span></h2>
     </div>
-    <div class="container">
+    <div class="container pb-5 m-pb-2">
         <div class="row">
             <div class="col-md-4 px-0">
 <script src="https://widget.gobistories.com/gwi/6" async onload="gobi.discover()"></script>
@@ -773,7 +773,7 @@ $(document).ready(function () {
 
     // Function to fetch jobs from the API
     function fetchJobs() {
-        fetch('https://api.talentech.io/reachmee/feed/') // Ensure this URL is correct
+        fetch('https://api.talentech.io/reachmee/feed/akh') // Ensure this URL is correct
             .then(response => response.json())
             .then(data => {
                 jobs = data; // Store fetched jobs
@@ -818,7 +818,7 @@ $(document).ready(function () {
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script>
     async function fetchFeed() {
-        const response = await fetch('https://api.talentech.io/reachmee/feed/');
+        const response = await fetch('https://api.talentech.io/reachmee/feed/akh');
         return await response.json();
     }
 
