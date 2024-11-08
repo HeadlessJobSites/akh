@@ -611,13 +611,13 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="container">
         <img src="./files/Logo_Hæhre_web.png" alt="Hæhre Logo" class="mb-3" style="max-width: 180px;">
                 <div class="mt-3 mb-4" style="max-width: 600px; margin: auto;">
-		 <p style="font-size: 1.25rem;">Talentech facilitates the full talent journey on a scalable platform with a tailored ecosystem of HR tech solutions.</p>
+		 <p style="font-size: 1.25rem;">Hæhre tilbyr unike karrieremuligheter i et av Norges mest spennende anleggsentreprenører. Bli med å bygge fremtiden sammen med oss.</p>
 		</div>
-        <!--<div class="">
-            <a href="https://www.facebook.com/talentechnorway"><img src="./files/TT-f.svg" alt="Icon 1" class="mx-2" style="width: 30px; height: 30px;"></a>
-            <a href="https://www.linkedin.com/company/talentech-norway"><img src="./files/TT-l.svg" alt="Icon 2" class="mx-2" style="width: 30px; height: 30px;"></a>
-            <a href="https://talentech.com/no/kontakt"><img src="./files/TT-e.svg" alt="Icon 4" class="mx-2" style="width: 30px; height: 30px;"></a>
-        </div>-->
+        <div class="">
+            <a href="https://www.facebook.com/HaehreEntreprenor/?locale=nb_NO"><img src="./files/TT-f.svg" alt="Icon 1" class="mx-2" style="width: 30px; height: 30px;"></a>
+            <a href="https://no.linkedin.com/company/haehreentreprenor"><img src="./files/TT-l.svg" alt="Icon 2" class="mx-2" style="width: 30px; height: 30px;"></a>
+            <a href="https://akh.no/kontakt-selskapet/"><img src="./files/TT-e.svg" alt="Icon 4" class="mx-2" style="width: 30px; height: 30px;"></a>
+        </div>
     </div>
 </section>
 
@@ -704,13 +704,13 @@ $(document).ready(function () {
 
 	    
 	// Populate location filter
-        $('#locationFilter').html('<option value="All">All locations</option>');
+        $('#locationFilter').html('<option value="All">Alle steder</option>');
         locationSet.forEach(country => {
             $('#locationFilter').append(`<option value="${country}">${country}</option>`);
         });
 
         // Populate job type filter
-        $('#jobTypeFilter').html('<option value="All">All job types</option>');
+        $('#jobTypeFilter').html('<option value="All">Alle stillingstyper</option>');
         jobTypeSet.forEach(type => {
             $('#jobTypeFilter').append(`<option value="${type}">${type}</option>`);
         });
@@ -891,32 +891,33 @@ L.tileLayer('https://api.mapbox.com/styles/v1/inequi/cm38t8tkw00yf01qz8aca7nni/t
         });
 
         function updatePopup(markerObj) {
-            const job = markerObj.jobs[markerObj.jobIndex];
-            let popupContent = `
-                <div style="background-color: #8f53f0; color: #fff; padding: 20px; border-radius: 12px;">
-                    <a href="${job.url}" style="font-size: large; color: #fff; text-decoration: none;">${job.title}</a>
-                    <!--<div style="margin-top: 10px;">
-                        <span style="color: rgba(233, 243, 231, 0.7);">Location:</span> <span>${job.country}</span>
-                    </div>-->
-                    <div style="display: flex; justify-content: flex-end; margin-top: 10px;">
-                        <a href="${job.url}" style="background-color: #fff; color: #000; padding: 5px 10px; text-decoration: none; border-radius: 5px;">See job</a>
-                    </div>
-                    ${markerObj.jobs.length > 1 ? `
-                    <div style="display: flex; justify-content: space-between; margin-top: 15px;">
-                        <button onclick="changeJob(${markerObj.marker._leaflet_id}, -1, event)" style="background: none; border: none; cursor: pointer; color: #fff;"><i class="fa fa-chevron-left"></i></button>
-                        <button onclick="changeJob(${markerObj.marker._leaflet_id}, 1, event)" style="background: none; border: none; cursor: pointer; color: #fff;"><i class="fa fa-chevron-right"></i></button>
-                    </div>
-                    ` : ''}
-                </div>
-            `;
-            markerObj.marker.bindPopup(popupContent).openPopup();
+    const job = markerObj.jobs[markerObj.jobIndex];
+    let popupContent = `
+        <div style="background-color: #8f53f0; color: #fff; padding: 20px; border-radius: 12px; width: 300px; height: 150px; overflow: auto;">
+            <a href="${job.url}" style="font-size: large; color: #fff; text-decoration: none;">${job.title}</a>
+            <!--<div style="margin-top: 10px;">
+                <span style="color: rgba(233, 243, 231, 0.7);">Location:</span> <span>${job.country}</span>
+            </div>-->
+            <div style="display: flex; justify-content: flex-end; margin-top: 10px;">
+                <a href="${job.url}" style="background-color: #fff; color: #000; padding: 5px 10px; text-decoration: none; border-radius: 5px;">See job</a>
+            </div>
+            ${markerObj.jobs.length > 1 ? `
+            <div style="display: flex; justify-content: space-between; margin-top: 15px;">
+                <button onclick="changeJob(${markerObj.marker._leaflet_id}, -1, event)" style="background: none; border: none; cursor: pointer; color: #fff;"><i class="fa fa-chevron-left"></i></button>
+                <button onclick="changeJob(${markerObj.marker._leaflet_id}, 1, event)" style="background: none; border: none; cursor: pointer; color: #fff;"><i class="fa fa-chevron-right"></i></button>
+            </div>
+            ` : ''}
+        </div>
+    `;
+    markerObj.marker.bindPopup(popupContent).openPopup();
 
-            markerObj.marker.getPopup().on('remove', () => {
-                markerObj.marker.off().on('click', () => {
-                    updatePopup(markerObj);
-                });
-            });
-        }
+    markerObj.marker.getPopup().on('remove', () => {
+        markerObj.marker.off().on('click', () => {
+            updatePopup(markerObj);
+        });
+    });
+}
+
 
         window.changeJob = function(markerId, direction, e) {
             e.stopPropagation();
