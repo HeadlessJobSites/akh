@@ -189,7 +189,7 @@ h2 {
 	background-size: cover;
 	background-position: center;
 	min-height: 400px;
-	border-radius: 5px;
+    	border-radius: 8px 40px 0 0;
 }
 .text-padding {
 	padding: 40px;
@@ -332,7 +332,7 @@ h2 {
 	height: auto;
 }
 .quote-section {
-	background-color: #8f53f0;
+	background-color: #003D6A;
 	color: #fff;
 	padding: 60px 20px;
 }
