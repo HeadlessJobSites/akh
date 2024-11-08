@@ -54,6 +54,11 @@
 	font-style: normal;
 	font-display: swap;
 }
+
+.btn-arrow:after {
+	content: url('./arrow-right-long-regular.svg');
+	height: 8px;
+}
 #company-section {
     background: #013d6a;
     color: #fff;
@@ -600,7 +605,7 @@ a:hover {
 	font-weight: 800;
 }
 .bg-dark {
-	background-color: #152228 !important;
+	background-color: #212121 !important;
 }
 @media (max-width: 991.98px) {
 	.background-image {
@@ -853,7 +858,7 @@ a.nav-link.new-link {
 
 @media (max-width: 992px) {
     .navbar {
-        background-color: #152228 !important;
+        background-color: #212121 !important;
     }
     .mobile-only {
         display: flex !important;
