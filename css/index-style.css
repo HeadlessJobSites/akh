@@ -415,17 +415,20 @@ h2 {
 	font-size: 2rem;
 }
 @media (max-width: 768px) {
-	.benefits-section .row {
-		display: flex;
-		flex-wrap: nowrap;
-		overflow-x: auto;
-	}
-	.benefit-item {
-		flex: 0 0 80%;
-		margin-right: 20px;
-	}
-	.benefit-content {
-	}
+.blockquote p {
+	font-size: 25px;
+}
+.benefits-section .row {
+	display: flex;
+	flex-wrap: nowrap;
+	overflow-x: auto;
+}
+.benefit-item {
+	flex: 0 0 80%;
+	margin-right: 20px;
+}
+.benefit-content {
+}
 }
 .process-content p {
 	margin-bottom: 0;
