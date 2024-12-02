@@ -157,13 +157,6 @@ h2 {
 .text-padding {
 	padding: 40px;
 }
-.team-member {
-	flex: 0 0 33.333333%;
-	max-width: 33.333333%;
-	text-align: left;
-	padding: 0 15px;
-	box-sizing: border-box;
-}
 .team-member img {
 	margin-bottom: 20px;
 	width: 100%;
