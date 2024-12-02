@@ -271,7 +271,24 @@ h2 {
 	height: 450px;
 	display: block;
 }
+.team-member {
+    flex: 0 0 25%; 
+    max-width: 25%;
+}
+
+
 @media (max-width: 768px) {
+    .carousel-inner {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+    .carousel-item {
+        display: flex;
+        flex: 0 0 auto;
+        width: 100%;
+    }
 	.team-member {
 		flex: 0 0 70%;
 		max-width: 70%;
