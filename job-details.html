@@ -499,7 +499,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     iframe.style.width = "100%";
                     iframe.style.border = "none";
                     iframe.id = "applicationFormIframe";
-                    const iframeSrc = `https://web106.reachmee.com/ext/I002/212/apply?job_id=${jobId}&site=8&validator=9515b69d8e98d583d52f8ce6f8662f09&lang=UK&ihelper=${encodeURIComponent('https://career.talentech.com/jobs/rm?rmpage=job&rmjob=' + jobId)}`;
+                    const iframeSrc = `https://web106.reachmee.com/ext/I002/212/apply?job_id=${jobId}&site=8&validator=9515b69d8e98d583d52f8ce6f8662f09&lang=NO&ihelper=${encodeURIComponent('https://career.talentech.com/jobs/rm?rmpage=job&rmjob=' + jobId)}`;
                     iframe.setAttribute('src', iframeSrc);
                     document.getElementById('applicationFormContainer').appendChild(iframe);
                 }
@@ -599,7 +599,7 @@ window.addEventListener('message', function(event) {
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('agent').addEventListener('click', function() {
-        var iframeUrl = "https://web106.reachmee.com/ext/I002/212/subscribe?site=8&lang=UK&validator=9515b69d8e98d583d52f8ce6f8662f09";
+        var iframeUrl = "https://web106.reachmee.com/ext/I002/212/subscribe?site=8&lang=NO&validator=9515b69d8e98d583d52f8ce6f8662f09";
         document.getElementById('modalIframe').src = iframeUrl;
         $('#exampleModal').modal('show');
     });
