@@ -712,7 +712,7 @@ $(document).ready(function () {
         fetch('https://api.talentech.io/reachmee/feed/akh')
             .then(response => response.json())
             .then(data => {
-                jobs = data.filter(job => job.employment_level?.toLowerCase() !== "åpen søknad"); // Exclude jobs by employment level "Åpen Søknad"
+                jobs = data.filter(job => job.employment_level?.toLowerCase() == "åpen søknad"); // Exclude jobs by employment level "Åpen Søknad"
                 populateFilters(); // Fill dropdowns with options
                 displayJobs(); // Show initial jobs
             })
