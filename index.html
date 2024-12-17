@@ -111,7 +111,9 @@ document.addEventListener('DOMContentLoaded', function() {
   fetch('https://api.talentech.io/reachmee/feed/akh')
     .then(response => response.json())
     .then(jobs => {
-      const positionsCount = jobs.length; // Get the count of jobs from the feed
+      // Filter out jobs with employment level "Åpen Søknad"
+      const filteredJobs = jobs.filter(job => job.employment_level?.toLowerCase() !== "åpen søknad");
+      const positionsCount = filteredJobs.length; // Get the count of filtered jobs
       const btnText = positionsCount === 1 ? 'Se 1 ledig stilling' : `Se ${positionsCount} ledige stillinger`; // Update button text based on count
       document.querySelector('a.btn.btn-primary.btn-lg strong').textContent = positionsCount > 0 ? btnText : 'Se ledige stillinger';
     })
