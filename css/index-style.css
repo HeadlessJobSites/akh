@@ -55,9 +55,11 @@
 	font-display: swap;
 }
 
-
+.btn-regular-vacancy {
+    background: #288c96 !important;
+}
 .btn-open {
-    background: #288c96;
+    background: #003D6A !important;
 }
 .service-box {
     background-color: #eaf3f4;
@@ -330,6 +332,10 @@ h2 {
 
 
 @media (max-width: 768px) {
+.btn-open {
+    margin-top: 20px;
+    margin-left: 0 !important;
+}
     .carousel-inner {
         display: flex;
         overflow-x: auto;
