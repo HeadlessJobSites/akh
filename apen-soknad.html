@@ -736,7 +736,7 @@ $(document).ready(function () {
         fetch('https://api.talentech.io/reachmee/feed/akh') // Ensure this URL is correct
             .then(response => response.json())
             .then(data => {
-                jobs = data.filter(job => job.employment_level?.toLowerCase() === "åpen søknad"); // Filter jobs by employment level "Åpen Søknad"
+                jobs = data.filter(job => job.employment_level_id === 7); // Filter jobs by employment_level_id 7
                 displayedJobs = Math.min(jobsToShow, jobs.length); // Initialize displayedJobs
                 populateFilters(); // Fill dropdowns with options
                 displayJobs(); // Show initial jobs
@@ -766,10 +766,11 @@ $(document).ready(function () {
     $('#jobTypeFilter').change(function() {
         displayedJobs = jobsToShow; // Reset displayed jobs to show initial count based on current device
         displayJobs(); // Apply filter and display jobs
-        updateLoadMoreVisibility(); // Update "Load More" button visibility based on filters
+        updateLoad MoreVisibility(); // Update "Load More" button visibility based on filters
     });
 });
 </script>
+
 
 
 
