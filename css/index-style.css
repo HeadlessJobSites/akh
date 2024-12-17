@@ -70,11 +70,6 @@
     max-width: 70%;
 }
 .service-image {
-    flex-shrink: 0;
-    position: absolute;
-    right: -50px; /* Ensure image overlaps */
-    top: 50%;
-    transform: translateY(-50%);
 }
 .service-image img {
     height: 200px; /* Set the desired height */
