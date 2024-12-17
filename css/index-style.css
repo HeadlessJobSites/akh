@@ -56,7 +56,9 @@
 }
 
 
-
+.btn-open {
+    background: #288c96;
+}
 .service-box {
     background-color: #eaf3f4;
     position: relative;
