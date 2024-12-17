@@ -93,15 +93,18 @@ $(document).ready(function() {
 
 
 
-    <div class="hero-section">
-        <video playsinline autoplay loop muted class="hero-video">
-            <source src="./files/Akh-video-1.mp4" type="video/mp4">
-        </video>
-        <div class="hero-content">
-            <h1>Vi bygger <span style="font-weight: 800;">fremtidens infrastruktur</span></h1>
-            <a href="#jobs-anchor" class="btn btn-primary btn-lg"><span class="btn-arrow"><strong>Se ledige stillinger</strong></span></a>
-        </div>
+<div class="hero-section">
+    <video playsinline autoplay loop muted class="hero-video">
+        <source src="./files/Akh-video-1.mp4" type="video/mp4">
+    </video>
+    <div class="hero-content">
+        <h1>Vi bygger <span style="font-weight: 800;">fremtidens infrastruktur</span></h1>
+        <a href="#jobs-anchor" class="btn btn-primary btn-lg"><span class="btn-arrow"><strong>Se ledige stillinger</strong></span></a>
+        <!-- New button for "Åpen søknad" jobs -->
+        <a href="./apen-stilling.html" class="btn btn-primary btn-lg" style="margin-left: 10px;"><span class="btn-arrow"><strong>Se åpne stillinger</strong></span></a>
     </div>
+</div>
+
 
 
 
@@ -111,19 +114,27 @@ document.addEventListener('DOMContentLoaded', function() {
   fetch('https://api.talentech.io/reachmee/feed/akh')
     .then(response => response.json())
     .then(jobs => {
-      // Filter out jobs with employment level "Åpen Søknad"
-      const filteredJobs = jobs.filter(job => job.employment_level?.toLowerCase() !== "åpen søknad");
-      const positionsCount = filteredJobs.length; // Get the count of filtered jobs
-      const btnText = positionsCount === 1 ? 'Se 1 ledig stilling' : `Se ${positionsCount} ledige stillinger`; // Update button text based on count
-      document.querySelector('a.btn.btn-primary.btn-lg strong').textContent = positionsCount > 0 ? btnText : 'Se ledige stillinger';
+      // Filter and count jobs excluding "Åpen Søknad"
+      const nonApenJobs = jobs.filter(job => job.employment_level?.toLowerCase() !== "åpen søknad");
+      const nonApenCount = nonApenJobs.length; // Count of jobs excluding "Åpen Søknad"
+      const nonApenBtnText = nonApenCount === 1 ? 'Se 1 ledig stilling' : `Se ${nonApenCount} ledige stillinger`;
+      document.querySelectorAll('a.btn.btn-primary.btn-lg')[0].querySelector('strong').textContent = nonApenCount > 0 ? nonApenBtnText : 'Se ledige stillinger';
+
+      // Filter and count jobs with "Åpen Søknad"
+      const apenJobs = jobs.filter(job => job.employment_level?.toLowerCase() === "åpen søknad");
+      const apenCount = apenJobs.length; // Count of "Åpen Søknad" jobs
+      const apenBtnText = apenCount === 1 ? 'Se 1 åpen stilling' : `Se ${apenCount} åpne stillinger`;
+      document.querySelectorAll('a.btn.btn-primary.btn-lg')[1].querySelector('strong').textContent = apenCount > 0 ? apenBtnText : 'Se åpne stillinger';
     })
     .catch(error => {
       console.error('Error fetching job details:', error);
-      // If there is an error fetching the jobs, show default text
-      document.querySelector('a.btn.btn-primary.btn-lg strong').textContent = 'Se ledige stillinger';
+      // Default text if there's an error fetching the jobs
+      document.querySelectorAll('a.btn.btn-primary.btn-lg')[0].querySelector('strong').textContent = 'Se ledige stillinger';
+      document.querySelectorAll('a.btn.btn-primary.btn-lg')[1].querySelector('strong').textContent = 'Se åpne stillinger';
     });
 });
 </script>
+
 
 
 	<!--
