@@ -647,11 +647,11 @@ $(document).ready(function () {
         const jobTypeSet = new Set();
 
         jobs.forEach(job => {
-            if (job.country) { // Check if job has a country
+            if (job.country) {
                 locationSet.add(job.country);
             }
-            if (job.title) { // Check if job has a title
-                jobTypeSet.add(job.title);
+            if (job.occupation_degree) {
+                jobTypeSet.add(job.occupation_degree);
             }
         });
 
@@ -663,8 +663,8 @@ $(document).ready(function () {
 
         // Populate job type filter
         $('#jobTypeFilter').html('<option value="All">Alle stillingstyper</option>');
-        jobTypeSet.forEach(type => {
-            $('#jobTypeFilter').append(`<option value="${type}">${type}</option>`);
+        jobTypeSet.forEach(degree => {
+            $('#jobTypeFilter').append(`<option value="${degree}">${degree}</option>`);
         });
     }
 
@@ -677,7 +677,7 @@ $(document).ready(function () {
         const selectedJobType = $('#jobTypeFilter').val();
         const filteredJobs = jobs.filter(job => {
             return (selectedCountry === 'All' || job.country === selectedCountry) &&
-                   (selectedJobType === 'All' || job.title === selectedJobType);
+                   (selectedJobType === 'All' || job.occupation_degree === selectedJobType);
         });
 
         // Add job cards to the DOM
@@ -695,12 +695,12 @@ $(document).ready(function () {
     <a href="${jobDetailUrl}" class="" style="text-decoration: none; color: inherit;" aria-label="Job details">
         <div class="card h-100">
             <div class="card-body">
-                <div class="card-category"><span>${organizationUnitName}</span></div>
+		        <div class="card-category"><span>${organizationUnitName}</span></div>
                 <div class="card-title">${job.title}</div>
                 <p class="card-text">${job.country}</p>
-                <a href="${jobDetailUrl}" class="stretched-link">
+			    <a href="${jobDetailUrl}" class="stretched-link">
                 <img src="./files/arrow-right-thin.svg" class="stretched-link" alt="Details" style="">
-                </a>
+		</a>
             </div>
         </div>
     </a>
@@ -709,10 +709,10 @@ $(document).ready(function () {
 
     // Function to fetch jobs from the API
     function fetchJobs() {
-        fetch('https://api.talentech.io/reachmee/feed/akh') // Ensure this URL is correct
+        fetch('https://api.talentech.io/reachmee/feed/akh')
             .then(response => response.json())
             .then(data => {
-                jobs = data; // Store fetched jobs
+                jobs = data.filter(job => job.employment_level?.toLowerCase() !== "åpen søknad"); // Exclude jobs by employment level "Åpen Søknad"
                 populateFilters(); // Fill dropdowns with options
                 displayJobs(); // Show initial jobs
             })
@@ -729,6 +729,7 @@ $(document).ready(function () {
     $('#jobTypeFilter').change(displayJobs);
 });
 </script>
+
 
 
 
