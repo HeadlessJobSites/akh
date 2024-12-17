@@ -74,6 +74,7 @@
 .service-image img {
     height: 200px; /* Set the desired height */
     width: auto; /* Maintain aspect ratio */
+    border-radius: 8px 40px 0 0;
 }
 @media (max-width: 992px) {
     .mobile-only {
