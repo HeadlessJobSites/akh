@@ -661,7 +661,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	
 
-
 <script>
 $(document).ready(function () {
     let jobs = []; // Array to store all jobs
@@ -732,20 +731,20 @@ $(document).ready(function () {
 </div>`;
     }
 
-    // Function to fetch jobs from the API
-    function fetchJobs() {
-        fetch('https://api.talentech.io/reachmee/feed/akh') // Ensure this URL is correct
-            .then(response => response.json())
-            .then(data => {
-                jobs = data; // Store fetched jobs
-                displayedJobs = Math.min(jobsToShow, jobs.length); // Initialize displayedJobs
-                populateFilters(); // Fill dropdowns with options
-                displayJobs(); // Show initial jobs
-            })
-            .catch(error => {
-                console.error('Error fetching jobs:', error);
-            });
-    }
+// Function to fetch jobs from the API
+function fetchJobs() {
+    fetch('https://api.talentech.io/reachmee/feed/akh')
+        .then(response => response.json())
+        .then(data => {
+            jobs = data; // Assign all fetched jobs directly
+            populateFilters(); // Fill dropdowns with options
+            displayJobs(); // Show initial jobs
+        })
+        .catch(error => {
+            console.error('Error fetching jobs:', error);
+        });
+}
+
 
     // Load jobs when page is ready
     fetchJobs();
