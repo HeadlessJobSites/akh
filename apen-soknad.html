@@ -379,26 +379,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    <div class="container my-5 pl-5 m-px-4 service-box-wrapper">
-        <div class="row">
-            <div class="col-12">
-                <div class="service-box p-5">
-                    <div class="service-content my-2">
-                        <h6>Åpen søknad</h6>
-                        <h2>Utforsk mulighetene hos oss</h2>
-                        <p class="my-4">Vi er en ledende aktør i vår bransje, og som en del av vårt team får du muligheten til å jobbe med spennende prosjekter og teknologier. Vi utfører en rekke tjenester som bidrar til både faglig og personlig vekst.</p>
-                        <a href="./apen-soknad.html"><button class="btn btn-primary apply-btn">Les mer om våre åpne søknader</button></a>
-                    </div>
-                    <div class="service-image mx-5 m-mx-5">
-                        <img src="./files/Fremtidens-arbeidsplass.jpg" alt="Åpen søknad">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
 	
     </div>
 </section>
@@ -656,7 +636,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 	
-	
 <script>
 $(document).ready(function () {
     let jobs = []; // Array to store all jobs
@@ -687,8 +666,7 @@ $(document).ready(function () {
             }
         });
 
-	    
-	// Populate location filter
+        // Populate location filter
         $('#locationFilter').html('<option value="All">Alle steder</option>');
         locationSet.forEach(country => {
             $('#locationFilter').append(`<option value="${country}">${country}</option>`);
@@ -725,22 +703,19 @@ $(document).ready(function () {
 
     // Function to build HTML for a job card
     function buildJobCard(job) {
-    // Assuming job-details.html is your detail page and it can handle job IDs
-    // Adjust accordingly if your detail page has a different URL structure
-    const jobDetailUrl = `job-details.html?jobId=${job.ad_id}`;
-        // Use the second organization unit if available, otherwise use the first one
+        const jobDetailUrl = `job-details.html?jobId=${job.ad_id}`;
         const organizationUnitName = job.organizations.length > 1 ? job.organizations[1].nameorgunit : job.organizations[0]?.nameorgunit || 'Not specified';
         return `
 <div class="col-12 col-md-4 col-lg-4 mb-4">
     <a href="${jobDetailUrl}" class="" style="text-decoration: none; color: inherit;" aria-label="Job details">
         <div class="card h-100">
             <div class="card-body">
-		        <div class="card-category"><span>${organizationUnitName}</span></div>
+                <div class="card-category"><span>${organizationUnitName}</span></div>
                 <div class="card-title">${job.title}</div>
                 <p class="card-text">${job.country}</p>
-			    <a href="${jobDetailUrl}" class="stretched-link">
+                <a href="${jobDetailUrl}" class="stretched-link">
                 <img src="./files/arrow-right-thin.svg" class="stretched-link" alt="Details" style="">
-		</a>
+                </a>
             </div>
         </div>
     </a>
@@ -761,7 +736,7 @@ $(document).ready(function () {
         fetch('https://api.talentech.io/reachmee/feed/akh') // Ensure this URL is correct
             .then(response => response.json())
             .then(data => {
-                jobs = data; // Store fetched jobs
+                jobs = data.filter(job => job.employment_level?.toLowerCase() === "åpen søknad"); // Filter jobs by employment level "Åpen Søknad"
                 displayedJobs = Math.min(jobsToShow, jobs.length); // Initialize displayedJobs
                 populateFilters(); // Fill dropdowns with options
                 displayJobs(); // Show initial jobs
